@@ -1,0 +1,45 @@
+# Skill: REST API Sandbox
+
+> A Grok skill that builds a local fake REST API: Python mock server, SDK, seed data, Dockerfile, docker-compose. Offline.
+
+## Purpose
+Explain the skill as a way to practice an API on this machine with no live backend. Source: fitzyracing1/skill-rest-api-sandbox.
+
+## How it works (plain English)
+1. Name the API you want to fake.
+2. Get a mock server in Python.
+3. Get a small SDK and seed data.
+4. Optionally wrap it in Docker.
+
+## Key ideas
+- Mock server (a fake API that answers locally)
+- Seed data (starter records)
+- Offline (no public net required)
+
+## The actual code
+```
+# source: fitzyracing1/skill-rest-api-sandbox
+mock = make_server()
+sdk = make_sdk()
+seed(mock)
+optional_docker()
+```
+
+## Line-by-line translation
+1. make_server() → “stand up the fake API”
+2. make_sdk() → “give a small client”
+3. seed(mock) → “put starter records in”
+4. optional_docker() → “box it if asked”
+
+## Decisions the program makes
+- If no live API exists → still run the mock
+- If Docker is not wanted → keep the plain Python server
+
+## What a person would notice
+An API they can hit on localhost.
+
+## Current status
+Barrage clone.
+
+## Next possible steps
+Open the HTML skill and name one API to mock.
